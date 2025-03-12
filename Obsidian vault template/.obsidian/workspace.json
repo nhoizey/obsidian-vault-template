@@ -245,7 +245,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 451.5
+    "width": 322.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -260,17 +260,18 @@
   },
   "active": "140b39301e1b9ab8",
   "lastOpenFiles": [
+    "attachments/obsidian-iconize.png",
+    "README.md",
+    "03. Rolodex/03. Rolodex.md",
     "Scripts/CustomJS/Shared.js",
     "Scripts/CustomJS",
     "Home.md",
-    "README.md",
     "02. Personal/Projects/Obsidian vault template/About the project.md",
     "02. Personal/Projects/Obsidian vault template/Obsidian vault template.md",
     "01. Work/01. Missions/Secret Intelligence Service/Undertow/1981-06-24 Briefing.md",
     "01. Work/01. Missions/Secret Intelligence Service/Thunderball/1961-03-27 Briefing.md",
     "01. Work/01. Missions/Impossible Missions Force/The Innocent/1970-10-03 Briefing.md",
     "01. Work/01. Missions/Impossible Missions Force/Operation Rogosh/1966-10-01 Briefing.md",
-    "03. Rolodex/03. Rolodex.md",
     "03. Rolodex/People/James Phelps.md",
     "03. Rolodex/People/attachments/James Phelps.jpg",
     "01. Work/01. Missions/Impossible Missions Force/The Innocent/James Phelps.md",
@@ -300,7 +301,6 @@
     "03. Rolodex/People/attachments/kitten.jpg",
     "03. Rolodex/People/attachments",
     "Scripts/otherCompaniesAndPeople.js",
-    "Scripts/TemplaterJS/peopleOrMeeting.js",
     "Work/Missions/Client A/Untitled.canvas"
   ]
 }

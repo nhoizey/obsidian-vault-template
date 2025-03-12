@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Wednesday, March 12th 2025, 7:02:31 pm
+updated: Thursday, March 13th 2025, 12:01:03 am
 ---
 
 This is an heavily opinionated **Obsidian vault template** packed with settings, plugins and automations.
@@ -17,7 +17,17 @@ It won the "Best Theme" of Obsidian [Gems of the Year 2024](https://obsidian.md/
 
 ## Iconize
 
+> [Obsidian Iconize](https://florianwoelki.github.io/obsidian-iconize/) is a plugin that let's you “add icons to anything you desire in Obsidian, including files, folders, and text”.
+
+Here's an example of icons added to some folders in the files browser:
+
+![[obsidian-iconize.png#interface|300]]
+
 ## Folder Note
+
+> [Folder notes](https://lostpaul.github.io/obsidian-folder-notes/) is a plugin that lets you attach notes to folders so that you can click on the name of a folder to open the note, like in the app [Notion](https://www.notion.so/).
+
+A folder note is created if you  hit <kbd>Alt</kbd> + <kbd>click</kbd> on a folder. This folder note automatically contains a list of tasks from the notes inside this folder and its child folders.
 
 ## Waypoint
 
@@ -42,6 +52,14 @@ It won the "Best Theme" of Obsidian [Gems of the Year 2024](https://obsidian.md/
 > [CustomJS](https://github.com/saml-dev/obsidian-custom-js) is a plugin for Obsidian that allows users to write custom Javascript that you can call anywhere you can write JS — including `dataviewjs` blocks and `templater` templates.
 
 ## Templater
+
+> [Templater](https://github.com/SilentVoid13/Templater) is a plugin that adds a template language, that lets you insert **variables** and **functions** results into your notes. It will also let you execute JavaScript code manipulating those variables and functions.
+
+It also allows defining default templates for notes created in some folders.
+
+For example, when you create a new note in the [[03. Rolodex/Companies]] or [[03. Rolodex/People]] folders, the relevant [[Template - Company]] and [[Template - People]] templates are used.
+
+A more complex use case is when you create a new note in the [[01. Work]] folder or its sub folders. The [[Template - People or Meeting notes]] template is automatically used, and contains some logic to decide if the note creation is for some [[Template - Meeting notes]] (you created the note from scratch in the folder), or a new [[Template - People]] note (you clicked a link inside another note from this folder).
 
 ## ICS
 
