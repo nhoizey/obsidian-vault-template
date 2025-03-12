@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Thursday, March 13th 2025, 12:01:03 am
+updated: Thursday, March 13th 2025, 12:02:05 am
 ---
 
 This is an heavily opinionated **Obsidian vault template** packed with settings, plugins and automations.
@@ -11,7 +11,7 @@ This is an heavily opinionated **Obsidian vault template** packed with settings,
 
 > [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino) is an Obsidian theme, optimized for **desktop and mobile devices**. Bringing **clean, focused, comfortable** reading and writing experience to your vault.
 
-![[cupertino-theme.png]]
+![[attachments/cupertino-theme.png]]
 
 It won the "Best Theme" of Obsidian [Gems of the Year 2024](https://obsidian.md/blog/2024-goty-winners/) awards.
 
@@ -21,7 +21,7 @@ It won the "Best Theme" of Obsidian [Gems of the Year 2024](https://obsidian.md/
 
 Here's an example of icons added to some folders in the files browser:
 
-![[obsidian-iconize.png#interface|300]]
+![[attachments/obsidian-iconize.png#interface|300]]
 
 ## Folder Note
 
