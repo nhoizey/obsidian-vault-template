@@ -1,0 +1,55 @@
+{
+  "settings": {
+    "migrated": 6,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "native",
+    "iconColor": "#663399",
+    "recentlyUsedIcons": [
+      "LiHome",
+      "LiBadgeDollarSign",
+      "LiInfo",
+      "LiLightbulb",
+      "LiArchive"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [
+      {
+        "rule": "TODO",
+        "icon": "LiListTodo",
+        "for": "everything",
+        "order": 0
+      }
+    ],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": true,
+    "iconInTitlePosition": "inline",
+    "iconInFrontmatterEnabled": false,
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconsInLinksEnabled": true,
+    "iconIdentifier": ":",
+    "lucideIconPackType": "native",
+    "debugMode": false,
+    "useInternalPlugins": false
+  },
+  "01. Work": "LiBuilding",
+  "02. Personal": "LiCircleUser",
+  "03. Rolodex": "LiDatabase",
+  "03. Rolodex/Companies": "LiBuilding",
+  "03. Rolodex/People": "LiUsers",
+  "01. Work/01. Missions": "LiConstruction",
+  "01. Work/01. Missions/z. Archives": "LiArchive",
+  "01. Work/02. Prospections/z. Archives": "LiArchive",
+  "README.md": "LiInfo",
+  "01. Work/02. Prospections": "LiBadgeDollarSign",
+  "Home.md": "LiHome"
+}

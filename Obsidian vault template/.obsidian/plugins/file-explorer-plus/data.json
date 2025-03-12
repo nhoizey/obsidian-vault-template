@@ -1,0 +1,71 @@
+{
+  "hideStrictPathFilters": true,
+  "pinFilters": {
+    "active": true,
+    "tags": [
+      {
+        "name": "",
+        "active": true,
+        "pattern": "",
+        "patternType": "STRICT"
+      }
+    ],
+    "paths": [
+      {
+        "name": "TODO",
+        "active": true,
+        "type": "FILES_AND_DIRECTORIES",
+        "pattern": "TODO",
+        "patternType": "WILDCARD"
+      },
+      {
+        "name": "Home",
+        "active": true,
+        "type": "FILES",
+        "pattern": "Home",
+        "patternType": "WILDCARD"
+      },
+      {
+        "name": "",
+        "active": true,
+        "type": "FILES",
+        "pattern": "README.md",
+        "patternType": "STRICT"
+      }
+    ]
+  },
+  "hideFilters": {
+    "active": true,
+    "tags": [
+      {
+        "name": "",
+        "active": true,
+        "pattern": "",
+        "patternType": "STRICT"
+      }
+    ],
+    "paths": [
+      {
+        "name": "attachments",
+        "active": true,
+        "type": "DIRECTORIES",
+        "pattern": "attachments",
+        "patternType": "WILDCARD"
+      },
+      {
+        "name": "Scripts",
+        "active": true,
+        "type": "DIRECTORIES",
+        "pattern": "Scripts",
+        "patternType": "WILDCARD"
+      },
+      {
+        "name": "Templates",
+        "active": true,
+        "type": "DIRECTORIES",
+        "pattern": "Templates",
+        "patternType": "WILDCARD"
+      }
+    ]
+  }
+}
