@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Thursday, March 13th 2025, 12:02:05 am
+updated: Thursday, March 13th 2025, 12:07:00 am
 ---
 
 This is an heavily opinionated **Obsidian vault template** packed with settings, plugins and automations.
@@ -11,7 +11,7 @@ This is an heavily opinionated **Obsidian vault template** packed with settings,
 
 > [Cupertino](https://github.com/aaaaalexis/obsidian-cupertino) is an Obsidian theme, optimized for **desktop and mobile devices**. Bringing **clean, focused, comfortable** reading and writing experience to your vault.
 
-![[attachments/cupertino-theme.png]]
+![[cupertino-theme.png]]
 
 It won the "Best Theme" of Obsidian [Gems of the Year 2024](https://obsidian.md/blog/2024-goty-winners/) awards.
 
@@ -21,7 +21,7 @@ It won the "Best Theme" of Obsidian [Gems of the Year 2024](https://obsidian.md/
 
 Here's an example of icons added to some folders in the files browser:
 
-![[attachments/obsidian-iconize.png#interface|300]]
+![[obsidian-iconize.png#interface|300]]
 
 ## Folder Note
 
@@ -59,7 +59,10 @@ It also allows defining default templates for notes created in some folders.
 
 For example, when you create a new note in the [[03. Rolodex/Companies]] or [[03. Rolodex/People]] folders, the relevant [[Template - Company]] and [[Template - People]] templates are used.
 
-A more complex use case is when you create a new note in the [[01. Work]] folder or its sub folders. The [[Template - People or Meeting notes]] template is automatically used, and contains some logic to decide if the note creation is for some [[Template - Meeting notes]] (you created the note from scratch in the folder), or a new [[Template - People]] note (you clicked a link inside another note from this folder).
+A more complex use case is when you create a new note in the [[01. Work]] folder or its sub folders. The [[Template - People or Meeting notes]] template is automatically used, and contains some logic to decide if the note creation is for
+
+- some [[Template - Meeting notes]] because you created the note from scratch in the folder
+- or a new [[Template - People]] note, because you clicked a link inside another note from this folder, we guess from the attendees list (maybe not always a safe bet).
 
 ## ICS
 
