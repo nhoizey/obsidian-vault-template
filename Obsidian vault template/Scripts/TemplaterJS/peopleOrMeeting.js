@@ -109,7 +109,7 @@ async function peopleOrMeeting(tp) {
             attendees.add(`[[${peopleByEmail[emailAddress]}]]`);
           }
         } else {
-          let attendeeName = cleanName(attendee.name);
+          const attendeeName = cleanName(attendee.name);
           const reversedAttendeeName = attendeeName.replace(/^([^ ]+) ([^ ]+)$/g, "$2 $1");
 
           if (attendeeName.length > 0) {
@@ -141,7 +141,7 @@ async function peopleOrMeeting(tp) {
       await tp.file.create_new(tp.file.find_tfile("Template - Meeting notes"), newNoteTitle, true, currentFolder);
 
       await tp.app.fileManager.processFrontMatter(await tp.file.find_tfile(newNoteTitle), (frontmatter) => {
-        frontmatter["attendees"] = Array.from(attendees);
+        frontmatter.attendees = Array.from(attendees);
       });
     }
   }
