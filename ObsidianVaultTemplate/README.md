@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Thursday, March 13th 2025, 10:08:05 am
+updated: Thursday, March 13th 2025, 4:50:44 pm
 ---
 
 This is an heavily opinionated **[Obsidian](https://obsidian.md) vault template** packed with settings, plugins and automations.
@@ -40,6 +40,8 @@ It helps build a graph better representing the hierarchy of notes.
 ## Homepage
 
 ## File Explorer++
+
+## Mononote
 
 ## Colored Tags
 

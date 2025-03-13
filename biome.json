@@ -6,7 +6,7 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"include": ["Obsidian vault template/Scripts/**"]
+		"include": ["ObsidianVaultTemplate/Scripts/**"]
 	},
 	"formatter": {
 		"useEditorconfig": true

@@ -15,7 +15,7 @@
               "type": "markdown",
               "state": {
                 "file": "Home.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "pinned": true,
@@ -24,9 +24,8 @@
             }
           },
           {
-            "id": "d9a9bb66f9b13cb3",
+            "id": "1c78117eeb35c276",
             "type": "leaf",
-            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -34,7 +33,6 @@
                 "mode": "source",
                 "source": false
               },
-              "pinned": true,
               "icon": "lucide-file",
               "title": "README"
             }
@@ -251,31 +249,32 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "homepage:Open homepage": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "homepage:Open homepage": false,
       "templater-obsidian:Templater": false
     }
   },
-  "active": "d9a9bb66f9b13cb3",
+  "active": "1c78117eeb35c276",
   "lastOpenFiles": [
-    "02. Personal/Projects/Obsidian vault template/Obsidian vault template.md",
     "Home.md",
     "README.md",
+    "02. Personal/Projects/Projects.md",
+    "01. Work/01. Work.md",
+    "03. Rolodex/03. Rolodex.md",
+    "02. Personal/Projects/Obsidian vault template/Obsidian vault template.md",
     "03. Rolodex/People/James Phelps.md",
     "03. Rolodex/People/James Bond.md",
     "03. Rolodex/People/Ethan Hunt.md",
     "Templates/Template - People.md",
-    "02. Personal/Projects/Projects.md",
     "02. Personal/Projects/Obsidian vault template/About the project.md",
     "01. Work/01. Missions/Impossible Missions Force/Impossible Missions Force.md",
     "01. Work/01. Missions/Secret Intelligence Service/Secret Intelligence Service.md",
     "01. Work/01. Missions/Secret Intelligence Service/Thunderball/1961-03-27 Briefing.md",
     "attachments/obsidian-iconize.png",
-    "03. Rolodex/03. Rolodex.md",
     "Scripts/CustomJS/Shared.js",
     "Scripts/CustomJS",
     "01. Work/01. Missions/Secret Intelligence Service/Undertow/1981-06-24 Briefing.md",
@@ -286,7 +285,6 @@
     "02. Personal/Projects/Obsidian vault template/TODO.md",
     "attachments/cupertino-theme.png",
     "attachments",
-    "01. Work/01. Work.md",
     "03. Rolodex/People/TODO.md",
     "01. Work/TODO.md",
     "01. Work/Untitled.md",
