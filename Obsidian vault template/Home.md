@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:32:18 pm
-updated: Thursday, March 13th 2025, 10:01:34 am
+updated: Thursday, March 13th 2025, 1:51:22 pm
 ---
 # Work
 
@@ -68,13 +68,18 @@ GROUP BY folderParts[2] + " ▸ " + folderParts[3] as mission
 
 ### ✍️ Projects
 
-```dataview
-LIST
-FROM "02. Personal/Projects"
-WHERE file.folder
-WHERE file.name != "Projects"
-GROUP BY regexreplace(file.folder, ".*\/([^\/]+)$", "$1") AS Project
-SORT Project DESC
+```dataviewjs
+dv.list(
+	app.vault.getFiles()
+	.filter(
+		file =>
+			file.parent.parent != null
+				&& file.parent.parent.path == "02. Personal/Projects"
+				&& file.name == file.parent.name +".md"
+	)
+	.sort((a, b) => a.name.localeCompare(b.name))
+	.map(file => dv.fileLink(file.path))
+)
 ```
 
 ### 🗄️ Latest updates
