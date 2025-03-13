@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An heavily opinionated Obsidian vault template packed with settings, plugins and automations",
   "scripts": {
-		"lint": "npx @biomejs/biome check",
+		"lint": "npx @biomejs/biome check --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
