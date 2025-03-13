@@ -1,9 +1,9 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Thursday, March 13th 2025, 10:03:32 am
+updated: Thursday, March 13th 2025, 10:08:05 am
 ---
 
-This is an heavily opinionated **Obsidian vault template** packed with settings, plugins and automations.
+This is an heavily opinionated **[Obsidian](https://obsidian.md) vault template** packed with settings, plugins and automations.
 
 # User interface improvements
 
@@ -73,3 +73,12 @@ A more complex use case is when you create a new note in the [[01. Work]] folder
 ## ICS
 
 ## Obsidian Custom JS
+
+# Finding help or inspiration
+
+There are multiple resources to find help or inspiration about Obsidian usage:
+
+- The official [documentation](https://docs.obsidian.md/)
+- A [Discord server](https://discord.gg/obsidianmd)
+- A [forum](https://forum.obsidian.md/)
+- A [Subredit](https://www.reddit.com/r/ObsidianMD/)
