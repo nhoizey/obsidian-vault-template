@@ -1,6 +1,6 @@
 ---
-created: 2024-09-06T11:26:26+02:00
-updated: 2025-03-07T17:43:41+01:00
+created: Friday, September 6th 2024, 11:26:26 am
+updated: Thursday, March 13th 2025, 10:42:52 am
 type: people
 company:
 former companies: []
@@ -20,4 +20,3 @@ photo:
 ```dataviewjs
 await dv.view("Scripts/currentPersonMeetings");
 ```
-
