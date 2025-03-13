@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Thursday, March 13th 2025, 12:07:00 am
+updated: Thursday, March 13th 2025, 10:03:32 am
 ---
 
 This is an heavily opinionated **Obsidian vault template** packed with settings, plugins and automations.
@@ -30,6 +30,12 @@ Here's an example of icons added to some folders in the files browser:
 A folder note is created if you  hit <kbd>Alt</kbd> + <kbd>click</kbd> on a folder. This folder note automatically contains a list of tasks from the notes inside this folder and its child folders.
 
 ## Waypoint
+
+> [Waypoint](https://github.com/IdreesInc/Waypoint) is an obsidian plugin that gives you the power to generate dynamic MOCs in your folder notes. Enables folders to show up in the graph view and removes the need for messy tags!
+
+The folder note created with the [[#Folder Note]] plugin also contains the list of notes below the folder, without the sub folders that have their own Folder Note.
+
+It helps build a graph better representing the hierarchy of notes.
 
 ## Homepage
 

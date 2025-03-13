@@ -22,8 +22,25 @@
               "icon": "lucide-file",
               "title": "Home"
             }
+          },
+          {
+            "id": "d9a9bb66f9b13cb3",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "README"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -135,13 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Home"
+              "title": "Outline of README"
             }
           },
           {
@@ -195,7 +212,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Home.md",
+                "file": "README.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -223,7 +240,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Home"
+              "title": "Graph of README"
             }
           }
         ]
@@ -243,16 +260,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8844864e19d74a4a",
+  "active": "d9a9bb66f9b13cb3",
   "lastOpenFiles": [
-    "02. Personal/Projects/Projects.md",
+    "README.md",
     "Home.md",
+    "02. Personal/Projects/Projects.md",
     "02. Personal/Projects/Obsidian vault template/Obsidian vault template.md",
     "02. Personal/Projects/Obsidian vault template/About the project.md",
     "01. Work/01. Missions/Impossible Missions Force/Impossible Missions Force.md",
     "01. Work/01. Missions/Secret Intelligence Service/Secret Intelligence Service.md",
     "01. Work/01. Missions/Secret Intelligence Service/Thunderball/1961-03-27 Briefing.md",
-    "README.md",
     "attachments/obsidian-iconize.png",
     "03. Rolodex/03. Rolodex.md",
     "Scripts/CustomJS/Shared.js",
