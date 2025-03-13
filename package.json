@@ -1,0 +1,27 @@
+{
+  "name": "obsidian-vault-template",
+  "version": "1.0.0",
+  "description": "An heavily opinionated Obsidian vault template packed with settings, plugins and automations",
+  "scripts": {
+		"lint": "npx @biomejs/biome check",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhoizey/obsidian-vault-template.git"
+  },
+  "keywords": [
+    "obsidian",
+    "vault",
+    "template"
+  ],
+  "author": "Nicolas Hoizey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nhoizey/obsidian-vault-template/issues"
+  },
+  "homepage": "https://github.com/nhoizey/obsidian-vault-template#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}
