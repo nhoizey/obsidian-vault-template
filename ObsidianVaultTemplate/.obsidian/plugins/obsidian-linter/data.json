@@ -4,7 +4,7 @@
       "enabled": false
     },
     "dedupe-yaml-array-values": {
-      "enabled": false,
+      "enabled": true,
       "dedupe-alias-key": true,
       "dedupe-tag-key": true,
       "dedupe-array-keys": true,
@@ -44,8 +44,8 @@
       "yaml-keys-to-remove": ""
     },
     "sort-yaml-array-values": {
-      "enabled": false,
-      "sort-alias-key": true,
+      "enabled": true,
+      "sort-alias-key": false,
       "sort-tag-key": true,
       "sort-array-keys": true,
       "ignore-keys": "",
@@ -92,7 +92,7 @@
       "enabled": false
     },
     "header-increment": {
-      "enabled": false,
+      "enabled": true,
       "start-at-h2": false
     },
     "headings-start-line": {
