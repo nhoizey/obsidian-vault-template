@@ -46,13 +46,6 @@
     ],
     "paths": [
       {
-        "name": "attachments",
-        "active": true,
-        "type": "DIRECTORIES",
-        "pattern": "attachments",
-        "patternType": "WILDCARD"
-      },
-      {
         "name": "Scripts",
         "active": true,
         "type": "DIRECTORIES",
@@ -64,6 +57,13 @@
         "active": true,
         "type": "DIRECTORIES",
         "pattern": "Templates",
+        "patternType": "WILDCARD"
+      },
+      {
+        "name": "Attachments",
+        "active": true,
+        "type": "DIRECTORIES",
+        "pattern": "attachments",
         "patternType": "WILDCARD"
       }
     ]

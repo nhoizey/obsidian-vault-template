@@ -16,7 +16,20 @@
     "NATO": 4,
     "bacteria": 5,
     "toxin": 6,
-    "CSS": 7
+    "CSS": 7,
+    "theme": 8,
+    "icons": 9,
+    "tasks": 10,
+    "graph": 11,
+    "tags": 12,
+    "colors": 13,
+    "readability": 14,
+    "YAML": 15,
+    "meeting": 16,
+    "query": 17,
+    "task": 18,
+    "ICS": 19,
+    "calendar": 20
   },
   "_version": 3
 }
