@@ -1,6 +1,7 @@
 {
   "cssTheme": "Cupertino",
   "enabledCssSnippets": [
-    "hide-some-metadata"
+    "hide-some-metadata",
+    "content"
   ]
 }
