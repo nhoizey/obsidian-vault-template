@@ -15,7 +15,8 @@
     "MOD": 3,
     "NATO": 4,
     "bacteria": 5,
-    "toxin": 6
+    "toxin": 6,
+    "CSS": 7
   },
   "_version": 3
 }

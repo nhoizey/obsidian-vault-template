@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Thursday, March 13th 2025, 4:50:44 pm
+updated: Monday, March 17th 2025, 9:41:42 am
 ---
 
 This is an heavily opinionated **[Obsidian](https://obsidian.md) vault template** packed with settings, plugins and automations.
@@ -44,6 +44,18 @@ It helps build a graph better representing the hierarchy of notes.
 ## Mononote
 
 ## Colored Tags
+
+## CSS snippets
+
+Obsidian allows using #CSS snippets to change the presentation of different elements in the UI or content. Snippets files should be created in `.obsidian/snippets/` and activated in the “Appearance” screen of the settings.
+
+The default style in Cupertino for selected text is really light grey, so here a `content.css` CSS snippet changes that to `gold` background:
+
+```css
+::selection {
+  background-color: gold !important;
+}
+```
 
 # Additional features
 

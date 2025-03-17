@@ -37,7 +37,8 @@
               "title": "README"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -149,13 +150,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Home.md",
+                "file": "README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Home"
+              "title": "Outline of README"
             }
           },
           {
@@ -209,7 +210,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Home.md",
+                "file": "README.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -237,7 +238,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Home"
+              "title": "Graph of README"
             }
           }
         ]
@@ -257,10 +258,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "8844864e19d74a4a",
+  "active": "f2d3752408e864fc",
   "lastOpenFiles": [
-    "README.md",
     "Home.md",
+    "README.md",
     "01. Work/01. Missions/Impossible Missions Force/Operation Rogosh/1966-10-01 Briefing.md",
     "01. Work/01. Missions/Impossible Missions Force/Impossible Missions Force.md",
     "02. Personal/Projects/Projects.md",
