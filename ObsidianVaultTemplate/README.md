@@ -1,6 +1,6 @@
 ---
 created: Wednesday, March 12th 2025, 2:55:17 pm
-updated: Monday, March 17th 2025, 5:50:43 pm
+updated: Wednesday, March 19th 2025, 2:06:23 pm
 ---
 
 This is an heavily opinionated **[Obsidian](https://obsidian.md) vault template** packed with settings, plugins and automations.
@@ -111,7 +111,7 @@ Queries can be made with the SQL-like [Dataview Query Language](https://blacksmi
 
 For example, here's the DQL code for the list of missions on the [[Home]] note:
 
-```
+```sql
 LIST
 FROM "01. Work/01. Missions" AND !"01. Work/01. Missions/z. Archives"
 WHERE file.folder
@@ -123,7 +123,7 @@ GROUP BY folderParts[2] + " ▸ " + folderParts[3] as mission
 
 And here's the more elaborate JavaScript for the list of personal projects on the same note:
 
-```
+```javascript
 dv.list(
 	app.vault.getFiles()
 	.filter(
