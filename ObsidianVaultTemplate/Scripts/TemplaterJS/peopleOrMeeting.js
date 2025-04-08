@@ -10,17 +10,17 @@ const NOTICE_DURATION = 10000; // 10 seconds
 // END OF CONFIGURATION
 /* ********************************************************** */
 
+const eventTitle = (str) => str.replace(/[:/#]/g, '-').replace('TR - ', '');
+
 const titleCase = (str) => {
-	return str
-		.trim()
-		.toLowerCase()
-		.replace(/(^|[ -])\w/g, (match) => match.toUpperCase());
-};
+	if (!str) {
+		return '';
+	}
+	return str.trim().toLowerCase().replace(/(^|[ -])\w/g, (match) => match.toUpperCase());
+}
 
 const cleanName = (str) => {
-	return titleCase(str)
-		.replace(/\([^)]*\)/g, "")
-		.trim();
+	return titleCase(str).replace(/\([^)]*\)/g, '').trim();
 };
 
 const now = Date.now();
@@ -31,91 +31,80 @@ async function peopleOrMeeting(tp) {
 	const currentTitle = initialFile.basename;
 	const currentDate = tp.date.now("YYYY-MM-DD");
 
-	if (currentTitle !== "Untitled") {
-		/* ********************************************************** */
-		// This is (probably) a people note, not a meeting note
-		/* ********************************************************** */
+	if (currentTitle !== 'Untitled') {
+	/* ********************************************************** */
+	// This is (probably) a people note, not a meeting note
+	/* ********************************************************** */
 
 		// Create a new file with the "People" template
-		await tp.file.create_new(
-			tp.file.find_tfile("Template - People"),
-			currentTitle,
-			true,
-			"03. Rolodex/People",
-		);
+		await tp.file.create_new(tp.file.find_tfile("Template - People"), currentTitle, true, "03. Rolodex/People");
 	} else {
+
 		/* ********************************************************** */
 		// This is a new meeting note
 		/* ********************************************************** */
 
-		new Notice(
-			"⏳ Please wait, trying to get meeting info from the calendar…",
-			NOTICE_DURATION,
-		);
+		new Notice("⏳ Please wait, trying to get meeting info from the calendar…", NOTICE_DURATION);
 
 		// Get events from the calendar
-		const beforeCalendarEvents = Date.now();
-		const calendarEvents = await app.plugins
-			.getPlugin("ics")
-			.getEvents(currentDate);
-		const afterCalendarEvents = Date.now();
-		console.log(
-			`Getting events from the calendar took ${(afterCalendarEvents - beforeCalendarEvents) / 1000} seconds`,
-		);
+		const calendarEvents = await app.plugins.getPlugin('ics').getEvents(currentDate);
+
 
 		const relevantEvents = [];
-		calendarEvents.map((event) => {
-			// const attendees = event.attendees.filter(attendee => attendee.type === 'INDIVIDUAL');
+		const otherEvents = [];
 
-			// Only keep events in progress
+		calendarEvents.map(event => {
+		// const attendees = event.attendees.filter(attendee => attendee.type === 'INDIVIDUAL');
+
+			event.title = eventTitle(event.summary);
+
+			// Store events in progress apart
 			event.start = moment(event.time, "kk:mm").valueOf();
 			event.end = moment(event.endTime, "kk:mm").valueOf();
 			if (event.end < event.start) {
 				// The event ends the next day
 				event.end += 24 * 60 * 60 * 1000;
 			}
-			if (now >= event.start && now <= event.end) {
+			if ((now >= event.start) && (now <= event.end)) {
 				relevantEvents.push(event);
+			} else {
+				otherEvents.push(event);
 			}
 		});
 
-		if (relevantEvents.length === 0) {
-			new Notice(`📆 Couldn't find any event…`, NOTICE_DURATION);
+		// Sort events by start time
+		relevantEvents.sort((a, b) => a.start - b.start);
+		otherEvents.sort((a, b) => a.start - b.start);
 
-			// Create a new file with the "Meeting notes" template
-			await tp.file.create_new(
-				tp.file.find_tfile("Template - Meeting notes"),
-				`${currentDate} Unknown meeting…`,
-				true,
-				currentFolder,
-			);
+		let event = undefined;
+
+		if (relevantEvents.length > 0) {
+			// Ask the user if the note is for one of current events
+			const currentEventChoices = relevantEvents.map(event => `${event.time} - ${event.title}`);
+			const currentEventValues = relevantEvents;
+			if (otherEvents.length > 0) {
+				currentEventChoices.push('📆 See other events for today');
+				currentEventValues.push(undefined);
+			}
+			event = (await tp.system.suggester([...currentEventChoices, "❌ Create an empty note [esc]"], [...currentEventValues, null], false, "Chose one of current events for this note…"));
+		}
+
+		if (event === undefined && otherEvents.length > 0) {
+			// Ask the user if the note is for one of other events
+			const otherEventChoices = otherEvents.map(event => `${event.time} - ${event.title}`);
+			event = (await tp.system.suggester([...otherEventChoices, "❌ Create an empty note [esc]"], [...otherEvents, null], false, "Chose an event for this note…"));
+		}
+
+		if (event === undefined || event === null) {
+			new Notice('🗒️ Create an empty meeting note…', NOTICE_DURATION);
+			await tp.file.create_new(tp.file.find_tfile("Template - Meeting notes"), `${currentDate} Meeting note…`, true, currentFolder);
 		} else {
-			new Notice(
-				`📆 Found ${relevantEvents.length} event${relevantEvents.length > 1 ? "s" : ""}…`,
-				NOTICE_DURATION,
-			);
+			new Notice(`👥 Retrieving the list of attendees for event: ${event.title}…`, NOTICE_DURATION);
 
-			// Take the shortest event 🤷‍♂️
-			// TODO: replace with a prompt to choose the event
-			relevantEvents.sort((a, b) => {
-				const aDuration = a.end - a.start;
-				const bDuration = b.end - b.start;
-				return aDuration - bDuration;
-			});
-			const event = relevantEvents[0];
-
-			const title = event.summary.replace(/[:/#]/g, "-").replace("TR - ", "");
-
-			new Notice(
-				`👥 Retrieving the list of attendees for event: ${title}…`,
-				NOTICE_DURATION,
-			);
 			// Retrieve all known email addresses for people Notes
 			const peopleByEmail = {};
 			const peopleNames = [];
-			const peopleNotes = await tp.app.plugins.plugins.dataview.api.pages(
-				'"03. Rolodex/People"',
-			);
+			const peopleNotes = await tp.app.plugins.plugins.dataview.api.pages('"03. Rolodex/People"');
 			for (const people of peopleNotes) {
 				if (people.emails) {
 					for (const email of people.emails) {
@@ -129,23 +118,17 @@ async function peopleOrMeeting(tp) {
 			// Build the list of attendees to add to the frontmatter
 			const attendees = new Set();
 			for (const attendee of event.attendees) {
-				if (attendee.type !== "INDIVIDUAL") {
+				if (attendee.type !== 'INDIVIDUAL') {
 					continue;
 				}
 				const emailAddress = attendee.email.toLowerCase();
 				if (peopleByEmail[emailAddress]) {
-					if (
-						!REMOVE_ME_FROM_ATTENDEES ||
-						peopleByEmail[emailAddress] !== MY_NAME
-					) {
+					if (!REMOVE_ME_FROM_ATTENDEES || peopleByEmail[emailAddress] !== MY_NAME) {
 						attendees.add(`[[${peopleByEmail[emailAddress]}]]`);
 					}
 				} else {
 					const attendeeName = cleanName(attendee.name);
-					const reversedAttendeeName = attendeeName.replace(
-						/^([^ ]+) ([^ ]+)$/g,
-						"$2 $1",
-					);
+					const reversedAttendeeName = attendeeName.replace(/^([^ ]+) ([^ ]+)$/g, "$2 $1");
 
 					if (attendeeName.length > 0) {
 						if (peopleNames.includes(attendeeName)) {
@@ -160,37 +143,26 @@ async function peopleOrMeeting(tp) {
 					}
 				}
 			}
-
-			new Notice(
-				`👥 Found ${attendees.size} attendee${attendees.size > 1 ? "s" : ""}…`,
-				NOTICE_DURATION,
-			);
+			new Notice(`👥 Found ${attendees.size} attendee${attendees.size > 1 ? 's' : ''}…`, NOTICE_DURATION);
 
 			// Build the title of the new note
 			// TODO: replace with a prompt to choose to open an existing note or change the title
-			let newNoteTitle = `${currentDate} ${title}`;
+			let newNoteTitle = `${currentDate} ${event.title}`;
 			let increment = 1;
 			while (await tp.file.exists(`${currentFolder}/${newNoteTitle}.md`)) {
 				increment++;
-				newNoteTitle = `${currentDate} ${title} ${increment}`;
+				newNoteTitle = `${currentDate} ${event.title} ${increment}`;
 			}
 
 			// Create a new file with the "Meeting notes" template
-			await tp.file.create_new(
-				tp.file.find_tfile("Template - Meeting notes"),
-				newNoteTitle,
-				true,
-				currentFolder,
-			);
+			await tp.file.create_new(tp.file.find_tfile("Template - Meeting notes"), newNoteTitle, true, currentFolder);
 
-			await tp.app.fileManager.processFrontMatter(
-				await tp.file.find_tfile(newNoteTitle),
-				(frontmatter) => {
-					frontmatter.attendees = Array.from(attendees);
-				},
-			);
+			await tp.app.fileManager.processFrontMatter(await tp.file.find_tfile(newNoteTitle), (frontmatter) => {
+				frontmatter.attendees = Array.from(attendees);
+			});
 		}
 	}
+
 	// Delete initial file
 	await tp.app.vault.adapter.trashLocal(initialFile.path);
 }
